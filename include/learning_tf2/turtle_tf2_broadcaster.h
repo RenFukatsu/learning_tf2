@@ -10,7 +10,7 @@
 class TurtleTf2Broadcaster
 {
 public:
-    TurtleTf2Broadcaster(int argc, char** argv);
+    TurtleTf2Broadcaster();
     void process();
 
 private:

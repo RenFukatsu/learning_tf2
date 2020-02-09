@@ -2,9 +2,13 @@
 <launch>
     <node pkg="turtlesim" type="turtlesim_node" name="sim" />
     <node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen" />
-    <param name="scale_linear" value="1" type="double" />
-    <param name="scale_angular" value="1" type="double" />
-    <node pkg="learning_tf2" type="turtle_tf2_broadcaster" args="/turtle1" name="turtle1_tf2_broadcaster" />
-    <node pkg="learning_tf2" type="turtle_tf2_broadcaster" args="/turtle2" name="turtle2_tf2_broadcaster" />
+    <param name="scale_linear" value="5" type="double" />
+    <param name="scale_angular" value="5" type="double" />
+    <node pkg="learning_tf2" type="turtle_tf2_broadcaster" name="turtle1_tf2_broadcaster" >
+        <param name="turtle_name" value="/turtle1" type="string" />
+    </node>
+    <node pkg="learning_tf2" type="turtle_tf2_broadcaster" name="turtle2_tf2_broadcaster" >
+        <param name="turtle_name" value="/turtle2" type="string" />
+    </node>
     <node pkg="learning_tf2" type="turtle_tf2_listener" name="listener" />
 </launch>
